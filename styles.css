@@ -40,8 +40,10 @@ header h1 {
 /* Layout container */
 .container {
     display: flex;
+    flex-wrap: wrap;
     margin: 20px;
     gap: 20px;
+    max-width: 1200px;
 }
 
 /* Sidebar */
@@ -142,7 +144,6 @@ footer {
     padding: 1rem;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -150,11 +151,21 @@ footer {
 
     .sidebar {
         width: 100%;
+        display: flex;
+        justify-content: space-around;
         margin-bottom: 20px;
+        background-color: #000;
     }
 
     .main-content {
+        width: 100%;
+        padding: 10px;
         border-left: none;
+    }
+
+    header {
+        height: auto;
+        padding: 1rem 0;
     }
 
     .intro {
