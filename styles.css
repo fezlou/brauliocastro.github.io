@@ -5,40 +5,61 @@
     box-sizing: border-box;
 }
 
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #ffffff;
+    color: #000;
     line-height: 1.6;
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 60px; /* to prevent footer overlap */
 }
 
+/* Header */
 header {
-    background-color: #4e73df;
+    width: 100%;
+    background-color: #4169e1;
     color: white;
-    padding: 1rem;
+    padding: 1.5rem 0;
+    height: 50px;
+    display: flex;  
+    align-items: center;   /* vertically centers */
+    justify-content: center;
     text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-h1 {
+header h1 {
     margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
-/* Container for sidebar and content */
+/* Layout container */
 .container {
     display: flex;
     margin: 20px;
+    gap: 20px;
 }
 
-/* Sidebar Styles */
+/* Sidebar */
 .sidebar {
     width: 250px;
-    background-color: #333;
-    color: white;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10px;
 }
+
 
 .sidebar ul {
     list-style-type: none;
+    background-color: black;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .sidebar ul li {
@@ -55,7 +76,7 @@ h1 {
     text-decoration: underline;
 }
 
-/* Main content area */
+/* Main content */
 .main-content {
     flex: 1;
     padding: 20px;
@@ -63,22 +84,90 @@ h1 {
     border-left: 2px solid #ddd;
 }
 
-/* Section styles */
+/* Intro Section */
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.intro-text {
+    flex: 1;
+}
+
+.intro-text h2 {
+    color: #010410;
+    margin-bottom: 10px;
+}
+
+.intro-text p {
+    font-size: 18px;
+}
+
+.intro-image {
+    flex: 1;
+    text-align: right;
+}
+
+.full-profile-pic {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    border: 4px solid #4e73df;
+}
+
+/* Sections */
 section {
     margin-bottom: 30px;
 }
 
 h2 {
-    color: #4e73df;
+    color: #00040d;
+    margin-bottom: 10px;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
     background-color: #333;
     color: white;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .main-content {
+        border-left: none;
+    }
+
+    .intro {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-image {
+        text-align: center;
+    }
+
+    .full-profile-pic {
+        max-width: 80%;
+        margin-top: 20px;
+    }
 }
